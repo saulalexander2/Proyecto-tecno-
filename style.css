@@ -50,12 +50,56 @@ h2{color:var(--accent-2);margin-bottom:8px;}
 .subtitle{color:rgba(255,255,255,0.75);margin-bottom:14px;}
 
 /* Timeline horizontal */
-.timeline-container{position:relative;margin:50px 0;height:150px;overflow-x:auto;padding-bottom:20px;}
-.timeline-line{position:absolute;top:50%;left:0;height:4px;width:200%;background:var(--accent);transform:translateY(-50%);}
-.timeline-item{position:absolute;top:50%;transform:translateY(-50%);width:180px;}
-.timeline-dot{width:14px;height:14px;border-radius:50%;background:var(--accent-2);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
-.timeline-content{margin-top:20px;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;opacity:0;transition:all .5s;}
-.timeline-item.visible .timeline-content{opacity:1;transform:translateY(0);}
+.timeline-container{
+  position:relative;
+  margin:50px 0;
+  height:180px;
+  overflow-x:auto;
+  padding-bottom:40px; /* espacio para los años */
+}
+.timeline-line{
+  position:absolute;
+  top:50%;
+  left:0;
+  height:4px;
+  width:200%;
+  background:var(--accent);
+  transform:translateY(-50%);
+}
+.timeline-item{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:180px;
+  text-align:center;
+}
+.timeline-dot{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--accent-2);
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+.timeline-content{
+  margin-top:20px;
+  background:rgba(255,255,255,0.02);
+  padding:10px;
+  border-radius:8px;
+  opacity:0;
+  transition:all .5s;
+}
+.timeline-item.visible .timeline-content{
+  opacity:1;
+  transform:translateY(0);
+}
 
-/* Footer */
-.site-foot{padding:18px;text-align:center;color:rgba(255,255,255,0.6);margin-top:28px;}
+/* Estilo para el año */
+.timeline-content p:first-of-type{
+  font-weight:600;
+  color:var(--accent);
+  margin-bottom:6px;
+  font-size:0.9rem;
+}
