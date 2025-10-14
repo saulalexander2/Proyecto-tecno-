@@ -54,11 +54,11 @@ function draw(){
 }
 draw();
 
-/* Timeline animation */
+// Timeline animation
 function revealTimeline(){
   document.querySelectorAll('.timeline-item').forEach(item=>{
     const rect=item.getBoundingClientRect();
-    if(rect.left < window.innerWidth*0.9){item.classList.add('visible');}
+    if(rect.top < window.innerHeight*0.9){item.classList.add('visible');}
   });
 }
 window.addEventListener('scroll',revealTimeline);
