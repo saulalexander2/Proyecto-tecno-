@@ -3,98 +3,152 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Trabajos - Saúl Alexander</title>
-  <link rel="stylesheet" href="saul-style.css" />
+  <title>Trabajos - Saúl Alexander (TecnoWave)</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="natural-header">
+  <!-- Animated wave background layers -->
+  <div id="wave-bg">
+    <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z"></path>
+    </svg>
+    <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,120 C250,10 850,210 1200,120 L1200,200 L0,200 Z"></path>
+    </svg>
+    <canvas id="tech-particles" aria-hidden="true"></canvas>
+  </div>
+
+  <header class="topbar">
     <div class="brand">
       <h1>Trabajos Secundaria</h1>
-      <small>Saúl Alexander</small>
+      <small>Saúl Alexander — TecnoWave</small>
     </div>
-    <nav class="tabs">
-      <button class="tab active" data-tab="tec">Tecnología</button>
-      <button class="tab" data-tab="hist">Historia</button>
-      <button class="tab" data-tab="evid">Evidencias</button>
+
+    <nav class="menu" role="navigation" aria-label="Menú principal">
+      <button class="menu-btn active" data-target="tec">Tecnología</button>
+      <button class="menu-btn" data-target="hist">Historia</button>
+      <button class="menu-btn" data-target="quim">Química</button>
+      <button class="menu-btn" data-target="mate">Matemáticas</button>
+      <button class="menu-btn" data-target="evid">Evidencias</button>
     </nav>
   </header>
 
-  <main class="container">
-    <section id="tec" class="tab-content active">
-      <div class="panel natural-panel">
-        <h2>Tecnología 🌿</h2>
-        <p class="lead">Proyectos que integran diseño y sistemas, enfocados en soluciones simples y sostenibles.</p>
+  <main class="content">
+    <!-- Tecnología -->
+    <section id="tec" class="panel active" role="region" aria-labelledby="tec-title">
+      <h2 id="tec-title">Tecnología</h2>
+      <p class="subtitle">Proyectos y experimentos prácticos: prototipos de IoT, microservicios y prototipos front-end.</p>
 
-        <div class="grid">
-          <div class="tile">
-            <h3>Proyecto: IoT Verde</h3>
-            <p>Sensor de humedad para riego eficiente</p>
-          </div>
-          <div class="tile">
-            <h3>Proyecto: Web Eco</h3>
-            <p>Landing minimal con rendimiento optimizado</p>
-          </div>
+      <div class="cards">
+        <article class="glass-card">
+          <h3>IoT: Estación Ambiental</h3>
+          <p>Sensor de calidad del aire que reporta datos a un dashboard con WebSocket. Enfoque en eficiencia energética.</p>
+          <div class="badge">Microcontroladores</div>
+        </article>
+
+        <article class="glass-card">
+          <h3>Frontend: Visualizador de Datos</h3>
+          <p>SPA interactiva con visualizaciones en tiempo real y accesibilidad (ARIA) como prioridad.</p>
+          <div class="badge">JS • D3</div>
+        </article>
+
+        <article class="glass-card">
+          <h3>Mini IA: Clasificador</h3>
+          <p>Clasificación básica de texto para organizar tareas escolares, con modelo ligero en el navegador.</p>
+          <div class="badge">ML</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Historia -->
+    <section id="hist" class="panel" role="region" aria-labelledby="hist-title">
+      <h2 id="hist-title">Historia</h2>
+      <p class="subtitle">Versión histórica por Saúl — foco en transformaciones tecnológicas sociales desde la Prehistoria.</p>
+
+      <div class="timeline-horizontal">
+        <div class="t-item">
+          <strong>Edad de Piedra</strong>
+          <p>Desarrollo de herramientas líticas y el dominio del fuego; las bases tecnológicas que permitieron mayor control del entorno.</p>
+        </div>
+        <div class="t-item">
+          <strong>Edad de los Metales</strong>
+          <p>Metalurgia y aleaciones (cobre, bronce, hierro): aceleraron la producción de herramientas y estructuras sociales estables.</p>
+        </div>
+      </div>
+
+      <h3>Cuatro civilizaciones fluviales — (puntos claves)</h3>
+      <div class="civ-grid">
+        <div class="civ">
+          <h4>Mesopotamia</h4>
+          <p>Administración escrita (cuneiforme) y sistemas de riego que impulsaron la economía y la tecnología de registro.</p>
+        </div>
+        <div class="civ">
+          <h4>Egipto</h4>
+          <p>Infraestructura hidráulica ligada al Nilo; prácticas de cálculo y arquitectura aplicada a grandes proyectos.</p>
+        </div>
+        <div class="civ">
+          <h4>Valle del Indo</h4>
+          <p>Urbanismo y estándares constructivos tempranos; redes comerciales y técnicas de planificación.</p>
+        </div>
+        <div class="civ">
+          <h4>China (Huang He)</h4>
+          <p>Sistemas de cultivo y organización administrativa que permitieron escalar técnicas agrícolas.</p>
         </div>
       </div>
     </section>
 
-    <section id="hist" class="tab-content">
-      <div class="panel natural-panel history">
-        <h2>Historia 📚</h2>
-        <p class="lead">Versión por Saúl — enfoque en cambios sociales y agrícolas durante la Prehistoria.</p>
+    <!-- Química -->
+    <section id="quim" class="panel" role="region" aria-labelledby="quim-title">
+      <h2 id="quim-title">Química</h2>
+      <p class="subtitle">Mini-laboratorio conceptual: reacciones, seguridad y aplicación tecnológica.</p>
 
-        <div class="timeline-vertical">
-          <div class="node">
-            <h4>Edad de Piedra</h4>
-            <p>Comunidades cazadoras-recolectoras que desarrollaron herramientas y estructuras de grupo.</p>
-          </div>
-          <div class="node">
-            <h4>Edad de los Metales</h4>
-            <p>Metalurgia temprana que permitió el surgimiento de oficios y comercio a pequeña escala.</p>
-          </div>
+      <div class="quim-grid">
+        <div class="quim-card">
+          <h3>Reacción de color</h3>
+          <p>Demostración de indicadores ácido/base: cómo se emplean en sensores modernos de pH.</p>
         </div>
-
-        <h3>Civilizaciones fluviales (puntos clave - Saúl)</h3>
-        <div class="civs-tiles">
-          <article class="civ">
-            <h4>Mesopotamia</h4>
-            <p>Primeras ciudades-estados y sistemas de irrigación que sostuvieron excedentes agrícolas.</p>
-          </article>
-          <article class="civ">
-            <h4>Egipto</h4>
-            <p>Ritmos agrícolas marcados por el Nilo y estructuras administrativas centralizadas.</p>
-          </article>
-          <article class="civ">
-            <h4>India/Harappa</h4>
-            <p>Planificación urbana y comercio regional con evidencias de estandarización.</p>
-          </article>
-          <article class="civ">
-            <h4>China</h4>
-            <p>Desarrollo de técnicas agrícolas y gobiernos organizados en torno al valle fluvial.</p>
-          </article>
+        <div class="quim-card">
+          <h3>Materiales</h3>
+          <p>Propiedades de materiales (conductividad, resistencia) y su aplicación en diseñar sensores.</p>
         </div>
       </div>
     </section>
 
-    <section id="evid" class="tab-content">
-      <div class="panel natural-panel">
-        <h2>Evidencias 📂</h2>
-        <p class="lead">Evidencia central (Historia) — versión Saúl. Documentación y material complementario.</p>
+    <!-- Matemáticas -->
+    <section id="mate" class="panel" role="region" aria-labelledby="mate-title">
+      <h2 id="mate-title">Matemáticas</h2>
+      <p class="subtitle">Pensamiento lógico aplicado: algoritmos, series y visualizaciones.</p>
 
-        <div class="evidence-simple">
-          <h3>Evidencia de Historia</h3>
-          <p>Archivo web con resumen histórico y recursos para estudio.</p>
-          <a class="btn" href="#">Ver evidencia</a>
+      <div class="math-showcase">
+        <div class="math-card">
+          <h3>Serie Fibonacci</h3>
+          <p>Ejemplo visual y breve nota sobre aplicaciones en algoritmos y estructuras de datos.</p>
+        </div>
+        <div class="math-card">
+          <h3>Estadística básica</h3>
+          <p>Uso de medias y desviaciones para entender datos de sensores (relación con IoT).</p>
         </div>
       </div>
     </section>
+
+    <!-- Evidencias -->
+    <section id="evid" class="panel" role="region" aria-labelledby="evid-title">
+      <h2 id="evid-title">Evidencias</h2>
+      <p class="subtitle">Aquí se centraliza la evidencia principal: la de Historia (única evidencia pública de la tarea).</p>
+
+      <div class="evidence-box">
+        <h3>Evidencia: Prehistoria y Civilizaciones</h3>
+        <p>Documento web preparado como evidencia: línea del tiempo y fichas de civilizaciones. (Versión Saúl)</p>
+        <a class="e-btn" href="#" role="button">Ver evidencia</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="natural-footer">
-    <small>© 2025 | Trabajos Secundaria — Saúl Alexander</small>
+  <footer class="site-foot">
+    <small>© 2025 • Trabajos Secundaria — Saúl Alexander</small>
   </footer>
 
-  <div id="leaf-particles" aria-hidden="true"></div>
-  <script src="saul-script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
