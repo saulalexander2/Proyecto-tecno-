@@ -1,91 +1,52 @@
-/* TecnoWave - style.css
-   Paleta: azules y violeta suave, ondas animadas, glass cards
-*/
 :root{
   --bg-1:#081326;
   --bg-2:#0b2540;
   --accent:#6ea8ff;
   --accent-2:#9b7bff;
-  --glass: rgba(255,255,255,0.04);
   --muted: rgba(255,255,255,0.7);
-  --card-bg: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
 }
 
-/* reset */
-*{box-sizing:border-box}
-html,body{height:100%}
+/* Reset y body */
+*{box-sizing:border-box;}
+html,body{height:100%;}
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
-  color:var(--muted);
-  overflow-x:hidden;
+  color: var(--muted);
+  overflow-x: hidden;
 }
 
-/* Wave background container sits behind content */
+/* Fondo de ondas */
 #wave-bg{
-  position:fixed;left:0;right:0;top:0;height:320px;overflow:hidden;pointer-events:none;z-index:0;
+  position:fixed; left:0; right:0; top:0; height:320px; overflow:hidden; pointer-events:none; z-index:0;
 }
-.wave{position:absolute;left:0;right:0;height:220px;fill:rgba(155,123,255,0.06);transform:translateY(-20px);animation:waveMove 12s linear infinite}
-.wave1{fill:rgba(110,168,255,0.06);opacity:1;animation-duration:14s}
-.wave2{fill:rgba(155,123,255,0.04);transform:translateY(10px);animation-duration:18s}
+.wave{position:absolute; left:0; right:0; height:220px; fill:rgba(155,123,255,0.06); transform:translateY(-20px); animation:waveMove 12s linear infinite;}
+.wave1{fill:rgba(110,168,255,0.06); animation-duration:14s;}
+.wave2{fill:rgba(155,123,255,0.04); transform:translateY(10px); animation-duration:18s;}
 @keyframes waveMove{0%{transform:translateX(0)}50%{transform:translateX(-10%)}100%{transform:translateX(0)}}
 
-/* canvas of tech particles */
-#tech-particles{position:fixed;left:0;right:0;top:0;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:0.7}
+/* Canvas de partículas */
+#tech-particles{position:fixed;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:0.7}
 
-/* topbar */
-.topbar{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;background:transparent;border-bottom:1px solid rgba(255,255,255,0.02);z-index:40}
-.brand h1{margin:0;font-size:1.15rem;color:var(--accent-2)}
-.brand small{display:block;color:rgba(255,255,255,0.65);font-size:0.85rem}
+/* Topbar */
+.topbar{
+  position:sticky; top:0; display:flex; align-items:center; justify-content:space-between; padding:14px 28px;
+  background:transparent; border-bottom:1px solid rgba(255,255,255,0.02); z-index:40;
+}
+.brand h1{margin:0;font-size:1.2rem;color:var(--accent-2);}
+.brand small{display:block;color:rgba(255,255,255,0.65);font-size:0.85rem;}
 
-/* menu */
-.menu{display:flex;gap:8px;align-items:center}
+/* Menu */
+.menu{display:flex;gap:8px;align-items:center;}
 .menu-btn{
   background:transparent;border:0;padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer;font-weight:600;transition:all .25s;
 }
-.menu-btn:hover{transform:translateY(-3px);color:var(--accent)}
-.menu-btn.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#041124;box-shadow:0 10px 30px rgba(110,168,255,0.08)}
+.menu-btn:hover{transform:translateY(-3px);color:var(--accent);}
+.menu-btn.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#041124;box-shadow:0 10px 30px rgba(110,168,255,0.08);}
 
-/* content area */
-.content{position:relative;max-width:1100px;margin:26px auto;padding:20px;z-index:20}
-.panel{display:none;padding:22px;border-radius:14px;background:var(--card-bg);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 40px rgba(2,6,23,0.6)}
-.panel.active{display:block;animation:panelIn .45s ease both}
-@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-/* headings/subtitles */
-h2{color:var(--accent-2);margin:6px 0 8px;font-weight:700}
-.subtitle{color:rgba(255,255,255,0.75);margin-bottom:14px}
-
-/* cards grid */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.glass-card{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);box-shadow:0 12px 30px rgba(2,6,23,0.55);transition:transform .28s}
-.glass-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 22px 50px rgba(110,168,255,0.06)}
-.badge{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);font-weight:700;color:var(--accent)}
-
-/* timeline and civs */
-.timeline-horizontal{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.t-item{flex:1 1 45%;padding:12px;background:rgba(255,255,255,0.02);border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
-.civ-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
-.civ{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
-
-/* quim / math */
-.quim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.quim-card{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
-.math-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.math-card{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
-
-/* evidence box */
-.evidence-box{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-.e-btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#041124;text-decoration:none;font-weight:700;box-shadow:0 12px 30px rgba(110,168,255,0.06)}
-
-/* footer */
-.site-foot{padding:18px;text-align:center;color:rgba(255,255,255,0.6);margin-top:28px}
-
-/* responsive */
-@media (max-width:720px){
-  .cards{grid-template-columns:1fr}
-  .timeline-horizontal{flex-direction:column}
-}
+/* Panels */
+.content{position:relative;max-width:1100px;margin:26px auto;padding:20px; z-index:20;}
+.panel{display:none;padding:22px;border-radius:14px;background:rgba(255,255,255,0.01);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 40px rgba(
 
 
