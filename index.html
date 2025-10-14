@@ -1,160 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trabajos Secundaria - Saúl Alexander</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajos Secundaria - Saúl Alexander</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Fondo de ondas y partículas -->
-  <div id="wave-bg">
-    <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z"></path>
-    </svg>
-    <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M0,120 C250,10 850,210 1200,120 L1200,200 L0,200 Z"></path>
-    </svg>
-    <canvas id="tech-particles" aria-hidden="true"></canvas>
+
+<!-- Fondo de ondas y partículas -->
+<div id="wave-bg">
+  <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z"></path>
+  </svg>
+  <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,120 C250,10 850,210 1200,120 L1200,200 L0,200 Z"></path>
+  </svg>
+  <canvas id="tech-particles"></canvas>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>Trabajos Secundaria</h1>
+    <small>Saúl Alexander</small>
   </div>
+  <nav class="menu">
+    <button class="menu-btn active" data-target="hist">Historia</button>
+    <button class="menu-btn" data-target="tec">Tecnología</button>
+    <button class="menu-btn" data-target="quim">Química</button>
+    <button class="menu-btn" data-target="mate">Matemáticas</button>
+  </nav>
+</header>
 
-  <header class="topbar">
-    <div class="brand">
-      <h1>Trabajos Secundaria</h1>
-      <small>Saúl Alexander</small>
+<main class="content">
+
+  <!-- Historia -->
+  <section id="hist" class="panel active">
+    <h2>Historia</h2>
+    <p class="subtitle">Línea del tiempo desde la Prehistoria hasta las civilizaciones fluviales.</p>
+
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <!-- Prehistoria -->
+      <div class="timeline-item" style="left:5%">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Edad de Piedra</strong>
+          <p>Uso de herramientas de piedra y control del fuego.</p>
+        </div>
+      </div>
+      <div class="timeline-item" style="left:20%">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Edad de los Metales</strong>
+          <p>Metalurgia: cobre, bronce e hierro para utensilios y armas.</p>
+        </div>
+      </div>
+
+      <!-- Civilizaciones fluviales -->
+      <div class="timeline-item" style="left:40%">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Mesopotamia</strong>
+          <p>Invención de la escritura cuneiforme.</p>
+        </div>
+      </div>
+      <div class="timeline-item" style="left:60%">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Egipto</strong>
+          <p>Arquitectura monumental y planificación hidráulica.</p>
+        </div>
+      </div>
+      <div class="timeline-item" style="left:80%">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>Valle del Indo</strong>
+          <p>Urbanismo organizado y sistemas de drenaje.</p>
+        </div>
+      </div>
+      <div class="timeline-item" style="left:95%">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <strong>China (Huang He)</strong>
+          <p>Desarrollo agrícola y administración centralizada.</p>
+        </div>
+      </div>
     </div>
-    <nav class="menu" role="navigation" aria-label="Menú principal">
-      <button class="menu-btn active" data-target="hist">Historia</button>
-      <button class="menu-btn" data-target="tec">Tecnología</button>
-      <button class="menu-btn" data-target="quim">Química</button>
-      <button class="menu-btn" data-target="mate">Matemáticas</button>
-    </nav>
-  </header>
+  </section>
 
-  <main class="content">
+  <!-- Tecnología -->
+  <section id="tec" class="panel"></section>
 
-    <!-- Historia -->
-    <section id="hist" class="panel active" role="region" aria-labelledby="hist-title">
-      <h2 id="hist-title">Historia</h2>
-      <p class="subtitle">Línea del tiempo desde la Prehistoria hasta las primeras civilizaciones fluviales.</p>
+  <!-- Química -->
+  <section id="quim" class="panel"></section>
 
-      <div class="timeline-container">
-        <div class="timeline-line"></div>
+  <!-- Matemáticas -->
+  <section id="mate" class="panel"></section>
 
-        <div class="timeline-item" style="left:5%">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <strong>Edad de Piedra (~2.5M a.C - 3000 a.C)</strong>
-            <p>Herramientas de piedra y dominio del fuego.</p>
-          </div>
-        </div>
+</main>
 
-        <div class="timeline-item" style="left:20%">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <strong>Edad de los Metales (~3500 a.C - 1200 a.C)</strong>
-            <p>Metalurgia: cobre, bronce e hierro para herramientas y armas.</p>
-          </div>
-        </div>
+<footer class="site-foot">
+  <small>© 2025 • Trabajos Secundaria — Saúl Alexander</small>
+</footer>
 
-        <div class="timeline-item" style="left:40%">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <strong>Mesopotamia (~3500 a.C)</strong>
-            <p>Cuneiforme y sistemas de riego avanzados.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" style="left:60%">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <strong>Egipto (~3100 a.C)</strong>
-            <p>Arquitectura monumental y planificación hidráulica.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" style="left:80%">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <strong>Valle del Indo (~2500 a.C)</strong>
-            <p>Urbanismo y estandarización de construcciones.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" style="left:95%">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <strong>China - Huang He (~2200 a.C)</strong>
-            <p>Sistemas agrícolas y administrativos avanzados.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="evidence-box">
-        <h3>Evidencia: Prehistoria y Civilizaciones</h3>
-        <p>Documento web preparado como evidencia: línea del tiempo y fichas de civilizaciones.</p>
-        <a class="e-btn" href="#" role="button">Ver evidencia</a>
-      </div>
-    </section>
-
-    <!-- Tecnología -->
-    <section id="tec" class="panel" role="region" aria-labelledby="tec-title">
-      <h2 id="tec-title">Tecnología</h2>
-      <p class="subtitle">Proyectos y experimentos prácticos de tecnología.</p>
-
-      <div class="cards">
-        <div class="glass-card">
-          <h3>Mini proyecto IoT</h3>
-          <p>Sensor ambiental conectado a un dashboard para controlar calidad del aire.</p>
-        </div>
-        <div class="glass-card">
-          <h3>Frontend interactivo</h3>
-          <p>Visualización de datos en tiempo real usando gráficos y animaciones.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Química -->
-    <section id="quim" class="panel" role="region" aria-labelledby="quim-title">
-      <h2 id="quim-title">Química</h2>
-      <p class="subtitle">Conceptos básicos y ejemplos prácticos.</p>
-
-      <div class="cards">
-        <div class="glass-card">
-          <h3>Reacción de color</h3>
-          <p>Indicadores ácido/base y su aplicación en sensores.</p>
-        </div>
-        <div class="glass-card">
-          <h3>Materiales y propiedades</h3>
-          <p>Conductividad y resistencia en experimentos simples.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Matemáticas -->
-    <section id="mate" class="panel" role="region" aria-labelledby="mate-title">
-      <h2 id="mate-title">Matemáticas</h2>
-      <p class="subtitle">Ejemplos y conceptos aplicados.</p>
-
-      <div class="cards">
-        <div class="glass-card">
-          <h3>Serie Fibonacci</h3>
-          <p>Aplicaciones en algoritmos y estructuras de datos.</p>
-        </div>
-        <div class="glass-card">
-          <h3>Estadística básica</h3>
-          <p>Medias y desviaciones para analizar datos de sensores.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-foot">
-    <small>© 2025 • Trabajos Secundaria — Saúl Alexander</small>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
