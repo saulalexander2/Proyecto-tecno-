@@ -1,0 +1,60 @@
+:root{
+  --bg:#f3efe6;
+  --panel:#e8f3ea;
+  --accent:#215940;
+  --muted:#7a8b7a;
+  --beige:#efe6d9;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  background:linear-gradient(180deg,var(--bg),#eef4ea);
+  color:var(--accent);
+  -webkit-font-smoothing:antialiased;
+}
+
+header.natural-header{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 26px;
+  background:linear-gradient(90deg, rgba(33,89,64,0.08), transparent);position:sticky;top:0;z-index:30;
+}
+
+.brand h1{margin:0;font-size:1.2rem}
+.brand small{display:block;color:var(--muted);font-size:0.85rem}
+
+nav.tabs .tab{
+  background:transparent;border:1px solid rgba(33,89,64,0.06);color:var(--accent);padding:8px 12px;border-radius:10px;cursor:pointer;
+}
+nav.tabs .tab.active{background:var(--accent);color:var(--beige);box-shadow:0 6px 18px rgba(33,89,64,0.08)}
+
+.container{max-width:1000px;margin:26px auto;padding:0 20px}
+
+.panel{padding:26px;border-radius:12px;background:var(--panel);border:1px solid rgba(33,89,64,0.06);box-shadow:0 6px 20px rgba(0,0,0,0.03)}
+
+.natural-panel .lead{color:var(--muted);margin-bottom:14px}
+
+/* grid tiles */
+.grid{display:flex;gap:14px;flex-wrap:wrap}
+.tile{flex:1 1 260px;background:white;padding:14px;border-radius:10px;border:1px solid rgba(0,0,0,0.03);box-shadow:0 8px 18px rgba(0,0,0,0.04)}
+
+.timeline-vertical{display:flex;flex-direction:column;gap:12px}
+.node{background:#fff;padding:12px;border-radius:10px;border-left:4px solid rgba(33,89,64,0.12)}
+
+.civs-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.civ{background:#fff;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.03)}
+
+/* evidence */
+.evidence-simple{padding:12px;background:#fff;border-radius:10px;display:inline-block}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:var(--beige);text-decoration:none}
+
+/* subtle leaf particles container */
+#leaf-particles{position:fixed;right:0;bottom:0;left:0;top:0;pointer-events:none;z-index:0;}
+
+/* tab content */
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* small responsive */
+@media(max-width:720px){
+  .grid{flex-direction:column}
+}
