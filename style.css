@@ -49,27 +49,19 @@ body{
 h2{color:var(--accent-2);margin-bottom:8px;}
 .subtitle{color:rgba(255,255,255,0.75);margin-bottom:14px;}
 
-/* Timeline horizontal */
 .timeline-container{
   position:relative;
   margin:50px 0;
+  height:180px;
   overflow-x:auto;
-  padding-bottom:40px; /* espacio para los años */
-}
-
-.timeline-items{
-  display:flex;
-  flex-wrap:nowrap;
-  gap:40px;
-  position:relative;
-  padding:20px 0;
+  padding-bottom:50px;
 }
 
 .timeline-line{
   position:absolute;
   top:50%;
   left:0;
-  width:100%;
+  width:200%;
   height:4px;
   background:var(--accent);
   transform:translateY(-50%);
@@ -77,11 +69,11 @@ h2{color:var(--accent-2);margin-bottom:8px;}
 }
 
 .timeline-item{
-  flex:0 0 auto; /* que no se encoga ni crezca */
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
   width:160px;
   text-align:center;
-  position:relative;
-  z-index:1;
 }
 
 .timeline-dot{
@@ -114,16 +106,20 @@ h2{color:var(--accent-2);margin-bottom:8px;}
   font-size:0.9rem;
 }
 
-/* Ajuste para móvil */
-@media (max-width:600px){
-  .timeline-items{
-    gap:24px;
-    padding:20px 10px;
+/* Móvil */
+@media (max-width:768px){
+  .timeline-container{
+    overflow-x:auto;
+  }
+  .timeline-line{
+    width:1000%; /* más larga para scroll horizontal */
   }
   .timeline-item{
-    width:140px;
+    min-width:150px;
   }
   .timeline-content{
     font-size:0.85rem;
   }
 }
+
+
