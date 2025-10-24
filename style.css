@@ -1,56 +1,118 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif;}
-body { background:#0a0a0a; color:#fff; overflow-x:hidden; }
-canvas#particles { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
-
-header { text-align:center; padding:2rem 1rem; background:#001100; border-bottom:2px solid #00ff00; }
-h1 { color:#00ff00; font-size:2rem; letter-spacing:1px; }
-
-.menu-materias { padding:2rem; }
-.materias { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-bottom:3rem; }
-
-.materia-card { background:rgba(0,255,0,0.15); border:1px solid #00ff00; border-radius:15px;
-  width:180px; height:100px; display:flex; justify-content:center; align-items:center;
-  font-weight:bold; font-size:1.2rem; cursor:pointer; transition:0.3s;
-}
-.materia-card:hover { transform:scale(1.1); background:rgba(0,255,0,0.3); box-shadow:0 0 15px #00ff00; }
-
-.materia-seccion { display:none; background:rgba(0,255,0,0.05); padding:2rem; border-radius:15px; transition:0.5s; transform-style: preserve-3d; }
-.materia-seccion.active { display:block; animation: flipIn 0.6s forwards; }
-
-@keyframes flipIn {
-  0% { transform: rotateY(90deg); opacity:0; }
-  100% { transform: rotateY(0deg); opacity:1; }
+:root{
+  --bg-1:#081326;
+  --bg-2:#0b2540;
+  --accent:#6ea8ff;
+  --accent-2:#9b7bff;
+  --muted: rgba(255,255,255,0.7);
 }
 
-.desc { margin-bottom:1rem; color:#bfbfbf; }
-
-/* Línea del tiempo */
-.timeline-container { overflow-x:auto; padding:2rem 0; white-space:nowrap; }
-.timeline { display:flex; align-items:center; gap:3rem; position:relative; padding:1rem 0; }
-.timeline::before { content:""; position:absolute; top:50%; left:0; width:100%; height:4px; background:#00ff00; transform:translateY(-50%); z-index:0; }
-
-.event { position:relative; flex-shrink:0; width:180px; text-align:center; }
-.event .circle { width:50px; height:50px; background:#00ff00; border-radius:50%; display:flex; align-items:center; justify-content:center;
-  margin:0 auto 1rem; font-size:0.7rem; font-weight:bold; color:#000; z-index:1; position:relative;
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color: var(--muted);
+  overflow-x: hidden;
 }
-.event .content { background:rgba(0,255,0,0.2); padding:0.8rem; border-radius:10px; border:1px solid #00ff00; transition:0.3s; z-index:1; position:relative; }
-.event .content:hover { transform:translateY(-10px); background:rgba(0,255,0,0.35); }
 
-/* Imagenes en línea del tiempo */
-.event .event-img { width:50px; height:50px; border-radius:50%; display:block; margin:0 auto 0.5rem; object-fit: cover; }
+/* Fondo de ondas */
+#wave-bg{
+  position:fixed; left:0; right:0; top:0; height:320px; overflow:hidden; pointer-events:none; z-index:0;
+}
+.wave{position:absolute; left:0; right:0; height:220px; fill:rgba(155,123,255,0.06); transform:translateY(-20px); animation:waveMove 12s linear infinite;}
+.wave1{fill:rgba(110,168,255,0.06); animation-duration:14s;}
+.wave2{fill:rgba(155,123,255,0.04); transform:translateY(10px); animation-duration:18s;}
+@keyframes waveMove{0%{transform:translateX(0)}50%{transform:translateX(-10%)}100%{transform:translateX(0)}}
 
-/* Footer */
-footer { text-align:center; padding:1rem; color:#00ff00; background:#001100; }
+#tech-particles{position:fixed;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen;opacity:0.7}
 
-/* Responsive */
+/* Topbar */
+.topbar{
+  position:sticky; top:0; display:flex; align-items:center; justify-content:space-between; padding:14px 28px;
+  background:transparent; border-bottom:1px solid rgba(255,255,255,0.02); z-index:40;
+}
+.brand h1{margin:0;font-size:1.2rem;color:var(--accent-2);}
+.brand small{display:block;color:rgba(255,255,255,0.65);font-size:0.85rem;}
+.menu{display:flex;gap:8px;align-items:center;}
+.menu-btn{
+  background:transparent;border:0;padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer;font-weight:600;transition:all .25s;
+}
+.menu-btn:hover{transform:translateY(-3px);color:var(--accent);}
+.menu-btn.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#041124;box-shadow:0 10px 30px rgba(110,168,255,0.08);}
+
+/* Panels */
+.content{position:relative;max-width:1100px;margin:26px auto;padding:20px; z-index:20;}
+.panel{display:none;padding:22px;border-radius:14px;background:rgba(255,255,255,0.01);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 40px rgba(2,6,23,0.6);}
+.panel.active{display:block;animation:panelIn .45s ease both;}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h2{color:var(--accent-2);margin-bottom:8px;}
+.subtitle{color:rgba(255,255,255,0.75);margin-bottom:14px;}
+/* Timeline horizontal responsive */
+.timeline-container{
+  margin:50px 0;
+  overflow-x:auto;
+  padding:20px 10px;
+}
+
+.timeline-items{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-width:800px; /* se puede scrollear en móvil */
+  position:relative;
+  padding:40px 0;
+  border-top:4px solid var(--accent);
+  border-bottom:4px solid var(--accent);
+  border-radius:10px;
+}
+
+.timeline-item{
+  flex:0 0 auto;
+  text-align:center;
+  position:relative;
+}
+
+.timeline-dot{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--accent-2);
+  margin:0 auto;
+}
+
+.timeline-content{
+  margin-top:12px;
+  background:rgba(255,255,255,0.02);
+  padding:10px;
+  border-radius:8px;
+  opacity:0;
+  transition:all .5s;
+  min-width:120px;
+}
+
+.timeline-item.visible .timeline-content{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Año destacado */
+.timeline-content p:first-of-type{
+  font-weight:600;
+  color:var(--accent);
+  margin-bottom:6px;
+  font-size:0.9rem;
+}
+
+/* Ajustes móviles */
 @media (max-width:768px){
-  .materias { gap:1rem; }
-  .materia-card { width:140px; height:80px; font-size:1rem; }
-  .timeline { gap:1.5rem; }
-  .event { width:140px; }
-  .event .circle { width:40px; height:40px; font-size:0.6rem; }
-  .event .event-img { width:40px; height:40px; }
+  .timeline-items{
+    min-width:1200px; /* más ancho para scroll horizontal */
+  }
+  .timeline-item{
+    min-width:140px;
+  }
+  .timeline-content{
+    font-size:0.85rem;
+  }
 }
-
-
-
