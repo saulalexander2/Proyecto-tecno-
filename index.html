@@ -1,121 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trabajos de Saúl Alexander</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajos Secundaria - Saúl Alexander</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="particles"></canvas>
 
-<header>
-  <h1>Trabajos de Saúl Alexander</h1>
+<!-- Fondo de ondas y partículas -->
+<div id="wave-bg">
+  <svg class="wave wave1" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z"></path>
+  </svg>
+  <svg class="wave wave2" viewBox="0 0 1200 200" preserveAspectRatio="none">
+    <path d="M0,120 C250,10 850,210 1200,120 L1200,200 L0,200 Z"></path>
+  </svg>
+  <canvas id="tech-particles"></canvas>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <h1>Trabajos Secundaria</h1>
+    <small>Saúl Alexander</small>
+  </div>
+  <nav class="menu">
+    <button class="menu-btn active" data-target="hist">Historia</button>
+    <button class="menu-btn" data-target="tec">Tecnología</button>
+    <button class="menu-btn" data-target="quim">Química</button>
+    <button class="menu-btn" data-target="mate">Matemáticas</button>
+  </nav>
 </header>
 
-<main class="menu-materias">
+<main class="content">
 
-  <!-- Mosaicos de materias -->
-  <div class="materias">
-    <div class="materia-card" data-target="historia-section">
-      <h2>Historia</h2>
-    </div>
-    <div class="materia-card" data-target="tecnologia-section">
-      <h2>Tecnología</h2>
-    </div>
-    <div class="materia-card" data-target="quimica-section">
-      <h2>Química</h2>
-    </div>
-    <div class="materia-card" data-target="matematicas-section">
-      <h2>Matemáticas</h2>
-    </div>
-  </div>
+<section id="hist" class="panel active">
+  <h2>Historia</h2>
+  <p class="subtitle">Línea del tiempo desde la Prehistoria hasta las civilizaciones fluviales.</p>
 
-  <!-- Secciones de materias -->
-  <section id="historia-section" class="materia-seccion">
-    <h2>Historia</h2>
-    <p class="desc">Explora la prehistoria y las primeras civilizaciones fluviales.</p>
-
-    <div class="timeline-container">
-      <div class="timeline">
-
-        <div class="event">
-          <img class="event-img" src="imagenes/edad_piedra.png" alt="Edad de Piedra">
-          <div class="circle">2,500,000 a.C.</div>
-          <div class="content">
-            <h4>Edad de Piedra</h4>
-            <p>Herramientas de piedra y fuego.</p>
-          </div>
+  <div class="timeline-container">
+    <div class="timeline-items">
+      <!-- Prehistoria -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>2,500,000 a.C – 3000 a.C</p>
+          <strong>Edad de Piedra</strong>
+          <p>Uso de herramientas de piedra y control del fuego.</p>
         </div>
-
-        <div class="event">
-          <img class="event-img" src="imagenes/edad_metales.png" alt="Edad de los Metales">
-          <div class="circle">3,000 a.C.</div>
-          <div class="content">
-            <h4>Edad de los Metales</h4>
-            <p>Uso de cobre, bronce e hierro.</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>3500 a.C – 1200 a.C</p>
+          <strong>Edad de los Metales</strong>
+          <p>Metalurgia: cobre, bronce e hierro para utensilios y armas.</p>
         </div>
-
-        <div class="event">
-          <img class="event-img" src="imagenes/mesopotamia.png" alt="Mesopotamia">
-          <div class="circle">3,500 a.C.</div>
-          <div class="content">
-            <h4>Mesopotamia</h4>
-            <p>Invención de la escritura cuneiforme.</p>
-          </div>
+      </div>
+      <!-- Civilizaciones fluviales -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>3500 a.C</p>
+          <strong>Mesopotamia</strong>
+          <p>Invención de la escritura cuneiforme.</p>
         </div>
-
-        <div class="event">
-          <img class="event-img" src="imagenes/egipto.png" alt="Egipto">
-          <div class="circle">3,100 a.C.</div>
-          <div class="content">
-            <h4>Egipto</h4>
-            <p>Pirámides y escritura jeroglífica.</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>3100 a.C</p>
+          <strong>Egipto</strong>
+          <p>Arquitectura monumental y planificación hidráulica.</p>
         </div>
-
-        <div class="event">
-          <img class="event-img" src="imagenes/valle_indo.png" alt="Valle del Indo">
-          <div class="circle">2,600 a.C.</div>
-          <div class="content">
-            <h4>Valle del Indo</h4>
-            <p>Urbanismo y drenaje organizado.</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>2500 a.C</p>
+          <strong>Valle del Indo</strong>
+          <p>Urbanismo organizado y sistemas de drenaje.</p>
         </div>
-
-        <div class="event">
-          <img class="event-img" src="imagenes/china.png" alt="China (Huang He)">
-          <div class="circle">2,200 a.C.</div>
-          <div class="content">
-            <h4>China (Huang He)</h4>
-            <p>Desarrollo agrícola y administración centralizada.</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p>2200 a.C</p>
+          <strong>China (Huang He)</strong>
+          <p>Desarrollo agrícola y administración centralizada.</p>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="tecnologia-section" class="materia-seccion flip-section">
-    <h2>Tecnología</h2>
-    <p class="desc">Panel de Tecnología. Aquí podrás agregar evidencias futuramente.</p>
-  </section>
 
-  <section id="quimica-section" class="materia-seccion flip-section">
-    <h2>Química</h2>
-    <p class="desc">Panel de Química. Aquí podrás agregar evidencias futuramente.</p>
-  </section>
 
-  <section id="matematicas-section" class="materia-seccion flip-section">
-    <h2>Matemáticas</h2>
-    <p class="desc">Panel de Matemáticas. Aquí podrás agregar evidencias futuramente.</p>
-  </section>
+  <!-- Tecnología -->
+  <section id="tec" class="panel"></section>
+
+  <!-- Química -->
+  <section id="quim" class="panel"></section>
+
+  <!-- Matemáticas -->
+  <section id="mate" class="panel"></section>
 
 </main>
 
-<footer>
-  <p>© 2025 Saúl Alexander</p>
+<footer class="site-foot">
+  <small>© 2025 • Trabajos Secundaria — Saúl Alexander</small>
 </footer>
 
 <script src="script.js"></script>
