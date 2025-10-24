@@ -1,117 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Trabajos de Saúl Alexander</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<canvas id="particles"></canvas>
+  <canvas id="particles"></canvas>
 
-<header>
-  <h1>Trabajos de Saúl Alexander</h1>
-</header>
+  <header>
+    <h1>Trabajos de Saúl Alexander</h1>
+  </header>
 
-<main class="menu-materias">
+  <main class="menu-materias">
 
-  <!-- Mosaicos de materias -->
-  <div class="materias">
-    <div class="materia-card" data-target="historia-section">
+    <div class="materias">
+      <div class="materia-card" data-target="historia-section"><h2>Historia</h2></div>
+      <div class="materia-card" data-target="tecnologia-section"><h2>Tecnología</h2></div>
+      <div class="materia-card" data-target="quimica-section"><h2>Química</h2></div>
+      <div class="materia-card" data-target="matematicas-section"><h2>Matemáticas</h2></div>
+    </div>
+
+    <section id="historia-section" class="materia-seccion">
       <h2>Historia</h2>
-    </div>
-    <div class="materia-card" data-target="tecnologia-section">
-      <h2>Tecnología</h2>
-    </div>
-    <div class="materia-card" data-target="quimica-section">
-      <h2>Química</h2>
-    </div>
-    <div class="materia-card" data-target="matematicas-section">
-      <h2>Matemáticas</h2>
-    </div>
-  </div>
+      <p class="desc">Explora la prehistoria y las primeras civilizaciones fluviales.</p>
 
-  <!-- Secciones de materias -->
-  <section id="historia-section" class="materia-seccion">
-    <h2>Historia</h2>
-    <p class="desc">Explora la prehistoria y las primeras civilizaciones fluviales.</p>
-
-    <div class="timeline-container">
-      <div class="timeline">
-
-        <div class="event">
-          <div class="circle">2,500,000 a.C.</div>
-          <div class="content">
-            <h4>Edad de Piedra</h4>
-            <p>Herramientas de piedra y fuego.</p>
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="event">
+            <div class="circle">2,500,000 a.C.</div>
+            <div class="content"><h4>Edad de Piedra</h4><p>Herramientas de piedra y fuego.</p></div>
+          </div>
+          <div class="event">
+            <div class="circle">3,000 a.C.</div>
+            <div class="content"><h4>Edad de los Metales</h4><p>Uso de cobre, bronce e hierro.</p></div>
+          </div>
+          <div class="event">
+            <div class="circle">3,500 a.C.</div>
+            <div class="content"><h4>Mesopotamia</h4><p>Escritura cuneiforme.</p></div>
+          </div>
+          <div class="event">
+            <div class="circle">3,100 a.C.</div>
+            <div class="content"><h4>Egipto</h4><p>Pirámides y jeroglíficos.</p></div>
+          </div>
+          <div class="event">
+            <div class="circle">2,600 a.C.</div>
+            <div class="content"><h4>Valle del Indo</h4><p>Urbanismo y drenaje organizado.</p></div>
+          </div>
+          <div class="event">
+            <div class="circle">2,200 a.C.</div>
+            <div class="content"><h4>China (Huang He)</h4><p>Administración centralizada y agricultura.</p></div>
           </div>
         </div>
-
-        <div class="event">
-          <div class="circle">3,000 a.C.</div>
-          <div class="content">
-            <h4>Edad de los Metales</h4>
-            <p>Uso de cobre, bronce e hierro.</p>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="circle">3,500 a.C.</div>
-          <div class="content">
-            <h4>Mesopotamia</h4>
-            <p>Invención de la escritura cuneiforme.</p>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="circle">3,100 a.C.</div>
-          <div class="content">
-            <h4>Egipto</h4>
-            <p>Pirámides y escritura jeroglífica.</p>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="circle">2,600 a.C.</div>
-          <div class="content">
-            <h4>Valle del Indo</h4>
-            <p>Urbanismo y drenaje organizado.</p>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="circle">2,200 a.C.</div>
-          <div class="content">
-            <h4>China (Huang He)</h4>
-            <p>Desarrollo agrícola y administración centralizada.</p>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="tecnologia-section" class="materia-seccion flip-section">
-    <h2>Tecnología</h2>
-    <p class="desc">Panel de Tecnología. Aquí podrás agregar evidencias futuramente.</p>
-  </section>
+    <section id="tecnologia-section" class="materia-seccion flip-section">
+      <h2>Tecnología</h2>
+      <p class="desc">Panel de Tecnología. Evidencias próximamente.</p>
+    </section>
 
-  <section id="quimica-section" class="materia-seccion flip-section">
-    <h2>Química</h2>
-    <p class="desc">Panel de Química. Aquí podrás agregar evidencias futuramente.</p>
-  </section>
+    <section id="quimica-section" class="materia-seccion flip-section">
+      <h2>Química</h2>
+      <p class="desc">Panel de Química. Evidencias próximamente.</p>
+    </section>
 
-  <section id="matematicas-section" class="materia-seccion flip-section">
-    <h2>Matemáticas</h2>
-    <p class="desc">Panel de Matemáticas. Aquí podrás agregar evidencias futuramente.</p>
-  </section>
+    <section id="matematicas-section" class="materia-seccion flip-section">
+      <h2>Matemáticas</h2>
+      <p class="desc">Panel de Matemáticas. Evidencias próximamente.</p>
+    </section>
 
-</main>
+  </main>
 
-<footer>
-  <p>© 2025 Saúl Alexander</p>
-</footer>
+  <footer>
+    <p>© 2025 Saúl Alexander</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
 <script src="script.js"></script>
 </body>
 </html>
+
