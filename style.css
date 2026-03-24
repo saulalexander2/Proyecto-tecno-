@@ -49,4 +49,16 @@ footer{text-align:center;padding:1rem;color:#fff;background: rgba(0,0,0,0.4);}
 .img-tecnologia:hover {
   transform: scale(1.05);
 }
+.img-historia {
+  display: block;
+  margin: 20px auto;
+  width: 300px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
 
+.img-historia:hover {
+  transform: scale(1.05);
+}
