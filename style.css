@@ -62,3 +62,22 @@ footer{text-align:center;padding:1rem;color:#fff;background: rgba(0,0,0,0.4);}
 .img-historia:hover {
   transform: scale(1.05);
 }
+.imagenes-tecnologia {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.imagenes-tecnologia img {
+  width: 250px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
+
+.imagenes-tecnologia img:hover {
+  transform: scale(1.05);
+}
